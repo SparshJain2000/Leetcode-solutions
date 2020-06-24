@@ -5,15 +5,9 @@
 //      The left subtree of a node contains only nodes with keys less than the node's key.
 //      The right subtree of a node contains only nodes with keys greater than the node's key.
 //      Both the left and right subtrees must also be binary search trees.
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
+
+#include <bits/stdc++.h>
+//Definition for a binary tree node.
 struct TreeNode
 {
     int val;
