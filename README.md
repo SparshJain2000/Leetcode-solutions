@@ -4,11 +4,11 @@ A repository of LEETCODE problem solutions in C++ .
 
 ## Prerequisites
 
-Just basic C++ knowledge and a knack for coding
-
-## Installing
+Just basic C++ knowledge 
 
 ▶️ There should a compiler toolchain able to compile C++ code and build the programs to run on it.
+
+## Installing
 
 🍴 Fork this repository
 
@@ -22,6 +22,8 @@ git clone https://github.com/SparshJain2000/Leetcode-solutions.git
 ## Contributing
 
 🍴 Fork the repository
+
+👯 Clone the forked repo 
 
 📝 Change it / add your code ,
 
