@@ -1,5 +1,6 @@
 # LEETCODE Solutions
 
+![visitor badge](https://visitor-badge.glitch.me/badge?page_id=SparshJain2000.Leetcode-solutions)
 A repository of LEETCODE problem solutions in C++ .
 
 ## Prerequisites
