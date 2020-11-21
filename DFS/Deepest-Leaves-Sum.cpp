@@ -1,63 +1,68 @@
 //Problem Statement
-
 /*
-
-    Given a binary tree, return the sum of values of its deepest leaves.
-
+Given a binary tree, return the sum of values of its deepest leaves.
 */
-
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
-class Solution
+#include <bits/stdc++.h>
+using namespace std;
+// Definition for a Node.
+class TreeNode
 {
 public:
-    int sum = 0, l = 0, max = 0;
-    vector<int> v;
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode *next;
 
-    void find(TreeNode *root)
+    TreeNode() : val(0), left(NULL), right(NULL), next(NULL) {}
+
+    TreeNode(int _val) : val(_val), left(NULL), right(NULL), next(NULL) {}
+
+    TreeNode(int _val, TreeNode *_left, TreeNode *_right, TreeNode *_next)
+        : val(_val), left(_left), right(_right), next(_next) {}
+};
+class Solution
+{
+    int maxHeight(TreeNode *root)
     {
-        if (root == NULL)
-            return;
-
-        l++;
-        if (root->left)
-            find(root->left);
-        if (root->right)
-            find(root->right);
-
-        if (root->left == NULL && root->right == NULL)
-        {
-            if (l > max)
-            {
-                cout << l << endl;
-                max = l;
-                v.clear();
-                v.push_back(root->val);
-            }
-            else if (l == max)
-                v.push_back(root->val);
-        }
-
-        l--;
+        if (!root)
+            return 0;
+        int l = maxHeight(root->left);
+        int r = maxHeight(root->right);
+        return (l > r) ? l + 1 : r + 1;
+    }
+    int util(TreeNode *root, int maxHeight, int curr)
+    {
+        if (!root)
+            return 0;
+        return (curr == maxHeight) ? root->val : util(root->left, maxHeight, curr + 1) + util(root->right, maxHeight, curr + 1);
     }
 
+public:
     int deepestLeavesSum(TreeNode *root)
     {
-
-        find(root);
-
-        for (int i = 0; i < v.size(); i++)
+        //* DFS : First find maxDepth and then find sum of nodes at that depth
+        // int curr=1;
+        // return util(root, maxHeight(root), curr);
+        //* BFS : level order traversal and return sum of elements at last level
+        queue<TreeNode *> q;
+        vector<int> temp;
+        q.push(root);
+        while (!q.empty())
         {
-            sum += v.at(i);
+            queue<TreeNode *> q1;
+            temp.clear();
+            while (!q.empty())
+            {
+                TreeNode *n = q.front();
+                q.pop();
+                temp.push_back(n->val);
+                if (n->left)
+                    q1.push(n->left);
+                if (n->right)
+                    q1.push(n->right);
+            }
+            q = q1;
         }
-
-        return sum;
+        return accumulate(temp.begin(), temp.end(), 0);
     }
 };
