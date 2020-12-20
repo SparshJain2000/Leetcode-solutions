@@ -5,9 +5,8 @@ Given a binary tree, return the sum of values of its deepest leaves.
 #include <bits/stdc++.h>
 using namespace std;
 // Definition for a Node.
-class TreeNode
-{
-public:
+class TreeNode {
+   public:
     int val;
     TreeNode *left;
     TreeNode *right;
@@ -20,26 +19,22 @@ public:
     TreeNode(int _val, TreeNode *_left, TreeNode *_right, TreeNode *_next)
         : val(_val), left(_left), right(_right), next(_next) {}
 };
-class Solution
-{
-    int maxHeight(TreeNode *root)
-    {
+class Solution {
+    int maxHeight(TreeNode *root) {
         if (!root)
             return 0;
         int l = maxHeight(root->left);
         int r = maxHeight(root->right);
         return (l > r) ? l + 1 : r + 1;
     }
-    int util(TreeNode *root, int maxHeight, int curr)
-    {
+    int util(TreeNode *root, int maxHeight, int curr) {
         if (!root)
             return 0;
         return (curr == maxHeight) ? root->val : util(root->left, maxHeight, curr + 1) + util(root->right, maxHeight, curr + 1);
     }
 
-public:
-    int deepestLeavesSum(TreeNode *root)
-    {
+   public:
+    int deepestLeavesSum(TreeNode *root) {
         //* DFS : First find maxDepth and then find sum of nodes at that depth
         // int curr=1;
         // return util(root, maxHeight(root), curr);
@@ -47,12 +42,10 @@ public:
         queue<TreeNode *> q;
         vector<int> temp;
         q.push(root);
-        while (!q.empty())
-        {
+        while (!q.empty()) {
             queue<TreeNode *> q1;
             temp.clear();
-            while (!q.empty())
-            {
+            while (!q.empty()) {
                 TreeNode *n = q.front();
                 q.pop();
                 temp.push_back(n->val);
