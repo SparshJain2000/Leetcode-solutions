@@ -1,12 +1,8 @@
 //Problem Statement
 /*
-Given the root of a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST.
+Given the root of a binary tree, the level of its root is 1, the level of its children is 2, and so on.
 
-As a reminder, a binary search tree is a tree that satisfies these constraints:
-
-The left subtree of a node contains only nodes with keys less than the node's key.
-The right subtree of a node contains only nodes with keys greater than the node's key.
-Both the left and right subtrees must also be binary search trees.
+Return the smallest level x such that the sum of all the values of nodes at level x is maximal.
 */
 #include <bits/stdc++.h>
 using namespace std;
