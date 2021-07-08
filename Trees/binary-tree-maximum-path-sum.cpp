@@ -6,32 +6,28 @@ For this problem, a path is defined as any sequence of nodes from some starting 
 */
 
 #include <bits/stdc++.h>
+using namespace std;
 //Definition for a binary tree node.
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode *left;
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
-class Solution
-{
-public:
-    int util(TreeNode *root, int &res)
-    {
-        if (root == NULL)
-            return 0;
-        int l = util(root->left, res);
-        int r = util(root->right, res);
-        int s = max(max(r, l) + root->val, root->val);
-        int t = max(s, r + l + root->val);
-        res = max(res, t);
-        return s;
+class Solution {
+   public:
+    int util(TreeNode *root, int &ans) {
+        if (!root) return 0;
+        int l = util(root->left, ans);
+        int r = util(root->right, ans);
+        int temp = max(max(l + root->val, r + root->val), root->val);
+        ans = max(ans, max(temp, l + r + root->val));
+
+        return temp;
     }
-    int maxPathSum(TreeNode *root)
-    {
-        int res = INT_MIN;
-        util(root, res);
-        return res;
+    int maxPathSum(TreeNode *root) {
+        int ans = INT_MIN;
+        util(root, ans);
+        return ans;
     }
 };
