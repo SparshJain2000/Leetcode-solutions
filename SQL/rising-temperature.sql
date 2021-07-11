@@ -41,3 +41,9 @@ WHERE
         WHERE
             w1.recordDate - w2.recordDate = 1
     );
+    
+    -----------
+select a.id as "id"
+from weather a,weather b
+where (a.recordDate = b.recordDate+1)
+and a.temperature>b.temperature;
