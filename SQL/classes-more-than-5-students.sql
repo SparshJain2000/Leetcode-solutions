@@ -57,3 +57,8 @@ FROM
     ) AS temp_table
 WHERE
     num >= 5;
+    ----------------
+select class as "class"
+from courses 
+group by class 
+having count(distinct student)>=5;
