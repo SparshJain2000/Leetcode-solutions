@@ -52,3 +52,10 @@ WHERE
     AND MOD(id, 2) = 1
 ORDER BY
     rating DESC;
+    
+---------------
+select id,movie,description,rating
+from cinema
+where mod(id,2)!=0 
+and description!='boring'
+order by rating desc;
