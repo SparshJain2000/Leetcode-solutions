@@ -11,7 +11,7 @@ class Solution {
    public:
     string baseNeg2(int N) {
         string ans = "";
-        while (N) {
+        while (N!=0) {
             ans += to_string(N & 1);
             N = -(N >> 1);
         }
