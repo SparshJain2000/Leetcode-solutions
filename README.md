@@ -1,7 +1,8 @@
 # LEETCODE Solutions
 
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=SparshJain2000.Leetcode-solutions)
-A repository of LEETCODE problem solutions in C++ .
+
+A repository of LEETCODE problem solutions in C++
 
 ## Prerequisites
 
@@ -15,7 +16,7 @@ Just basic C++ knowledge
 
 ```or```
 
-👯 Clone the repo 
+👯 Clone the repository
 ```
 git clone https://github.com/SparshJain2000/Leetcode-solutions.git
 ```
@@ -24,15 +25,15 @@ git clone https://github.com/SparshJain2000/Leetcode-solutions.git
 
 🍴 Fork the repository
 
-👯 Clone the forked repo 
+👯 Clone the forked repository
 
-📝 Change it / add your code ,
+📝 Change it / add your code
 
 ✔️ Do a "pull request"
 
 ## Support
 
-Give a 🌟 to this repo if it helped you a bit .
+Give a 🌟 to this repo if it helped you a bit.
 
 Connect with me
 
